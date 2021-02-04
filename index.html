@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+<meta charset="utf-8">
 <head>
 
 
@@ -22,6 +22,19 @@
         body {
             padding: 1em;
             text-align: center;
+        }
+        #getStarted{
+            font-size: 20px;
+            background-color:lightgreen;
+            color: red;
+        }
+        a{
+            color: blue;
+            font-weight: bold;
+        }
+        a:hover{
+            color: red;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -46,11 +59,22 @@
 
     <br/>
     <!--Take user to sign in page-->
-    <button class="btn-primary">Get Started!</button>
+    <button id="getStarted" class="btn-rounded"><a href="signInPage.html">Get Started!</a></button>
 
 
     <script>
-
+        // can add or change attributes for these objects later, just to get started
+        function Team(teamName, teamCity, teamStadium){
+            this.Name = teamName;
+            this.City = teamCity;
+            this.Stadium = teamStadium;
+        }
+        function Player(plName, plNumber, plPosition){
+            this.Name = plName;
+            this.Number = plNumber;
+            this.Position = plPosition;
+            //this.Team = Team; // link player to team
+        }
 
     </script>
 
