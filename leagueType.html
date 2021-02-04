@@ -55,11 +55,29 @@
     <h1>Max Fantasy</h1>
     <br />
 
-    <h3>PPR League</h3>
+    <!--Take user to sign in page-->
+    League Type: <select id="leagueType">
+        <option>Standard</option>
+        <option>PPR (Points Per Reception)</option>
+    </select>
+
+    <button id="chooseLeague" class="btn-rounded" onclick="return handleButton()"><a id="html" href="">Confirm League</a></button>
 
 
 
-   
+    <script>
+        function handleButton(){
+            let league = document.getElementById("leagueType").value;
+
+            if(league == "Standard"){
+                document.getElementById("html").href = "standard.html";
+            }else{
+                document.getElementById("html").href = "ppr.html";
+            }
+        }
+
+
+    </script>
 
 </body>
 
