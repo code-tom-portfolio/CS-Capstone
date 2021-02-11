@@ -53,13 +53,110 @@
         </div>
     </nav>
     <h1>Max Fantasy</h1>
+    <h3>PPR League</h3>
+    <p>Please fill in the player slots for your team</p>
     <br />
 
-    <h3>PPR League</h3>
+    <!--user enters in team for now-->
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">QB:</p><input id="qb" class="col-sm-4" type="text" oninput="return handleChange()">
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">RB:</p><input id="rb1" class="col-sm-4" type="text" oninput="return handleChange()">
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">RB:</p><input id="rb2" class="col-sm-4" type="text" oninput="return handleChange()">
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">WR:</p><input id="wr1" class="col-sm-4" type="text" oninput="return handleChange()">
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">WR:</p><input id="wr2" class="col-sm-4" type="text" oninput="return handleChange()">
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">TE:</p><input id="te" class="col-sm-4" type="text" oninput="return handleChange()">
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">FLEX:</p><input id="flex" class="col-sm-4" type="text" oninput="return handleChange()">
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">DEFENSE (TEAM):</p><input id="defense" class="col-sm-4" type="text" oninput="return handleChange()">
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">K:</p><input id="k" class="col-sm-4" type="text" oninput="return handleChange()">
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">BENCH:</p><input id="bench1" class="col-sm-4" type="text" oninput="return handleChange()">
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">BENCH:</p><input id="bench2" class="col-sm-4" type="text" oninput="return handleChange()">
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">BENCH:</p><input id="bench3" class="col-sm-4" type="text" oninput="return handleChange()">
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">BENCH:</p><input id="bench4" class="col-sm-4" type="text" oninput="return handleChange()">
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">BENCH:</p><input id="bench5" class="col-sm-4" type="text" oninput="return handleChange()">
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">BENCH:</p><input id="bench6" class="col-sm-4" type="text" oninput="return handleChange()">
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">BENCH:</p><input id="bench7" class="col-sm-4" type="text" oninput="return handleChange()">
+    </div>
 
+    </div>
 
+    <button id="btnSave" class="btn btn-primary" type="button" onclick="return submitTeam()">Save Team</button>
+<br/><br/>
+    <div id="result"></div>
 
-   
+    <script>
+        // make sure all values are filled in
+        // out put team for now
+
+        let teamSlots = ["qb", "rb1", "rb2", "wr1", "wr2", "te", "flex", "defense", "k", "bench1", "bench2", "bench3", "bench4", "bench5", "bench6", "bench7"];
+        function submitTeam() {
+            document.getElementById("btnSave").disabled = true;
+            for (let i = 0; i < teamSlots.length; i++) {
+                if (document.getElementById(teamSlots[i]).value == "" || document.getElementById(teamSlots[i]).value == null) {
+                    alert("Please make sure all slots are filled in with a player");
+                    return;
+                }
+            }
+
+            let team = [];
+            for (let i = 0; i < teamSlots.length; i++) {
+                team.push(document.getElementById(teamSlots[i]).value);
+            }
+
+            document.getElementById("result").innerHTML = "Your team: " + "<br/>"+ team.join("<br/>")
+
+        }
+
+        function handleChange(){
+            document.getElementById("result").innerHTML = "Your team: ";
+            document.getElementById("btnSave").disabled = false;
+        }
+    </script>
 
 </body>
 
