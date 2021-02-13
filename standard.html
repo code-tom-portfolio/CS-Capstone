@@ -54,106 +54,106 @@
     </nav>
     <h1>Max Fantasy</h1>
     <h3>Standard League</h3>
-    <p>Please fill in the player slots for your team</p>
+    <p>Please pick players from drop downs to fill your team</p>
     <br />
 
-    <!--user enters in team for now-->
+    <!-- QB drop down-->
     <div class="row">
         <p class="col-sm-2"></p>
         <p class="col-sm-2">QB:</p>
-        <input id="qb" class="col-sm-4" type="text" oninput="return handleChange()">
+        <select id="QB" class="col-sm-4" onchange="return handleChange()"></select>
     </div>
-    <br/>
+
+    <!-- RB drop downs-->
     <div class="row">
         <p class="col-sm-2"></p>
         <p class="col-sm-2">RB:</p>
-        <input id="rb1" class="col-sm-4" type="text" oninput="return handleChange()">
+        <select id="RB1" class="col-sm-4" onchange="return handleChange()"></select>
     </div>
-    <br/>
     <div class="row">
         <p class="col-sm-2"></p>
         <p class="col-sm-2">RB:</p>
-        <input id="rb2" class="col-sm-4" type="text" oninput="return handleChange()">
+        <select id="RB2" class="col-sm-4" onchange="return handleChange()"></select>
     </div>
-    <br/>
+
+    <!-- WR drop downs-->
     <div class="row">
         <p class="col-sm-2"></p>
         <p class="col-sm-2">WR:</p>
-        <input id="wr1" class="col-sm-4" type="text" oninput="return handleChange()">
+        <select id="WR1" class="col-sm-4" onchange="return handleChange()"></select>
     </div>
-    <br/>
     <div class="row">
         <p class="col-sm-2"></p>
         <p class="col-sm-2">WR:</p>
-        <input id="wr2" class="col-sm-4" type="text" oninput="return handleChange()">
+        <select id="WR2" class="col-sm-4" onchange="return handleChange()"></select>
     </div>
-    <br/>
+
+    <!-- TE drop down-->
     <div class="row">
         <p class="col-sm-2"></p>
         <p class="col-sm-2">TE:</p>
-        <input id="te" class="col-sm-4" type="text" oninput="return handleChange()">
+        <select id="TE" class="col-sm-4" onchange="return handleChange()"></select>
     </div>
-    <br/>
+
+    <!--FLEX drop down-->
     <div class="row">
         <p class="col-sm-2"></p>
         <p class="col-sm-2">FLEX:</p>
-        <input id="flex" class="col-sm-4" type="text" oninput="return handleChange()">
+        <select id="FLEX" class="col-sm-4" onchange="return handleChange()"></select>
     </div>
-    <br/>
+
+    <!--Defense drop down-->
     <div class="row">
         <p class="col-sm-2"></p>
-        <p class="col-sm-2">DEFENSE (TEAM):</p>
-        <input id="defense" class="col-sm-4" type="text" oninput="return handleChange()">
+        <p class="col-sm-2">DEFENSE:</p>
+        <select id="DEFENSE" class="col-sm-4" onchange="return handleChange()">
+            <option>Bills</option>
+            <option>Ravens</option>
+        </select>
     </div>
-    <br/>
+
+    <!--Kicker drop down-->
     <div class="row">
         <p class="col-sm-2"></p>
         <p class="col-sm-2">K:</p>
-        <input id="k" class="col-sm-4" type="text" oninput="return handleChange()">
-    </div>
-    <br/>
-    <div class="row">
-        <p class="col-sm-2"></p>
-        <p class="col-sm-2">BENCH:</p>
-        <input id="bench1" class="col-sm-4" type="text" oninput="return handleChange()">
-    </div>
-    <br/>
-    <div class="row">
-        <p class="col-sm-2"></p>
-        <p class="col-sm-2">BENCH:</p>
-        <input id="bench2" class="col-sm-4" type="text" oninput="return handleChange()">
-    </div>
-    <br/>
-    <div class="row">
-        <p class="col-sm-2"></p>
-        <p class="col-sm-2">BENCH:</p>
-        <input id="bench3" class="col-sm-4" type="text" oninput="return handleChange()">
-    </div>
-    <br/>
-    <div class="row">
-        <p class="col-sm-2"></p>
-        <p class="col-sm-2">BENCH:</p>
-        <input id="bench4" class="col-sm-4" type="text" oninput="return handleChange()"> 
-    </div>
-    <br/>
-    <div class="row">
-        <p class="col-sm-2"></p>
-        <p class="col-sm-2">BENCH:</p>
-        <input id="bench5" class="col-sm-4" type="text" oninput="return handleChange()">
-    </div>
-    <br/>
-    <div class="row">
-        <p class="col-sm-2"></p>
-        <p class="col-sm-2">BENCH:</p>
-        <input id="bench6" class="col-sm-4" type="text" oninput="return handleChange()">
-    </div>
-    <br/>
-    <div class="row">
-        <p class="col-sm-2"></p>
-        <p class="col-sm-2">BENCH:</p>
-        <input id="bench7" class="col-sm-4" type="text" oninput="return handleChange()">
+        <select id="K" class="col-sm-4" onchange="return handleChange()"></select>
     </div>
 
+    <!-- Bench drop downs-->
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">BENCH:</p>
+        <select id="BENCH1" class="col-sm-4" onchange="return handleChange()"></select>
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">BENCH:</p>
+        <select id="BENCH2" class="col-sm-4" onchange="return handleChange()"></select>
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">BENCH:</p>
+        <select id="BENCH3" class="col-sm-4" onchange="return handleChange()"></select>
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">BENCH:</p>
+        <select id="BENCH4" class="col-sm-4" onchange="return handleChange()"></select>
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">BENCH:</p>
+        <select id="BENCH5" class="col-sm-4" onchange="return handleChange()"></select>
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">BENCH:</p>
+        <select id="BENCH6" class="col-sm-4" onchange="return handleChange()"></select>
+    </div>
+    <div class="row">
+        <p class="col-sm-2"></p>
+        <p class="col-sm-2">BENCH:</p>
+        <select id="BENCH7" class="col-sm-4" onchange="return handleChange()"></select>
     </div>
 
     <button id="btnSave" class="btn btn-primary" type="button" onclick="return submitTeam()">Save Team</button>
@@ -163,60 +163,192 @@
     <div id="result"></div>
 
     <script>
-        // make sure all values are filled in
-        // out put team for now
+        // fetch json
+        fetch('dummyJSON.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                myJSON = data;
 
-        let teamSlots = ["qb", "rb1", "rb2", "wr1", "wr2", "te", "flex", "defense", "k", "bench1", "bench2", "bench3", "bench4", "bench5", "bench6", "bench7"];
+                // load drop downs with proper players in position
+
+                // qb select
+                let qbSelect = document.getElementById("QB");
+                myJSON.map(function (obj, i) {
+                    let myOption = document.createElement("option");
+                    if (obj.player_pos == "QB") {
+                        myOption.text = obj.player_name;
+                        myOption.value = obj.player_name;
+                        qbSelect.add(myOption, null);
+                    }
+                });
+
+                //rb selects
+                let rbSelect = document.getElementById("RB1");
+                myJSON.map(function (obj, i) {
+                    let myOption = document.createElement("option");
+                    if (obj.player_pos == "RB") {
+                        myOption.text = obj.player_name;
+                        myOption.value = obj.player_name;
+                        rbSelect.add(myOption, null);
+                    }
+                });
+                let rb2Select = document.getElementById("RB2");
+                myJSON.map(function (obj, i) {
+                    let myOption = document.createElement("option");
+                    if (obj.player_pos == "RB") {
+                        myOption.text = obj.player_name;
+                        myOption.value = obj.player_name;
+                        rb2Select.add(myOption, null);
+                    }
+                });
+
+                // wr selects
+                let wrSelect = document.getElementById("WR1");
+                myJSON.map(function (obj, i) {
+                    let myOption = document.createElement("option");
+                    if (obj.player_pos == "WR") {
+                        myOption.text = obj.player_name;
+                        myOption.value = obj.player_name;
+                        wrSelect.add(myOption, null);
+                    }
+                });
+                let wr2Select = document.getElementById("WR2");
+                myJSON.map(function (obj, i) {
+                    let myOption = document.createElement("option");
+                    if (obj.player_pos == "WR") {
+                        myOption.text = obj.player_name;
+                        myOption.value = obj.player_name;
+                        wr2Select.add(myOption, null);
+                    }
+                });
+
+                // te select
+                let teSelect = document.getElementById("TE");
+                myJSON.map(function (obj, i) {
+                    let myOption = document.createElement("option");
+                    if (obj.player_pos == "TE") {
+                        myOption.text = obj.player_name;
+                        myOption.value = obj.player_name;
+                        teSelect.add(myOption, null);
+                    }
+                });
+
+                // FLEX select
+                let flexSelect = document.getElementById("FLEX");
+                myJSON.map(function (obj, i) {
+                    let myOption = document.createElement("option");
+                    if (obj.player_pos == "RB" || obj.player_pos == "WR" || obj.player_pos == "TE") {
+                        myOption.text = obj.player_name;
+                        myOption.value = obj.player_name;
+                        flexSelect.add(myOption, null);
+                    }
+                });
+
+                // Kicker select
+                let kSelect = document.getElementById("K");
+                myJSON.map(function (obj, i) {
+                    let myOption = document.createElement("option");
+                    if (obj.player_pos == "K") {
+                        myOption.text = obj.player_name;
+                        myOption.value = obj.player_name;
+                        kSelect.add(myOption, null);
+                    }
+                });
+
+
+                // BENCH selects
+                let b1Select = document.getElementById("BENCH1");
+                myJSON.map(function (obj, i) {
+                    let myOption = document.createElement("option");
+                    myOption.text = obj.player_name;
+                    myOption.value = obj.player_name;
+                    b1Select.add(myOption, null);
+                });
+                let b2Select = document.getElementById("BENCH2");
+                myJSON.map(function (obj, i) {
+                    let myOption = document.createElement("option");
+                    myOption.text = obj.player_name;
+                    myOption.value = obj.player_name;
+                    b2Select.add(myOption, null);
+                });
+                let b3Select = document.getElementById("BENCH3");
+                myJSON.map(function (obj, i) {
+                    let myOption = document.createElement("option");
+                    myOption.text = obj.player_name;
+                    myOption.value = obj.player_name;
+                    b3Select.add(myOption, null);
+                });
+                let b4Select = document.getElementById("BENCH4");
+                myJSON.map(function (obj, i) {
+                    let myOption = document.createElement("option");
+                    myOption.text = obj.player_name;
+                    myOption.value = obj.player_name;
+                    b4Select.add(myOption, null);
+                });
+                let b5Select = document.getElementById("BENCH5");
+                myJSON.map(function (obj, i) {
+                    let myOption = document.createElement("option");
+                    myOption.text = obj.player_name;
+                    myOption.value = obj.player_name;
+                    b5Select.add(myOption, null);
+                });
+                let b6Select = document.getElementById("BENCH6");
+                myJSON.map(function (obj, i) {
+                    let myOption = document.createElement("option");
+                    myOption.text = obj.player_name;
+                    myOption.value = obj.player_name;
+                    b6Select.add(myOption, null);
+                });
+                let b7Select = document.getElementById("BENCH7");
+                myJSON.map(function (obj, i) {
+                    let myOption = document.createElement("option");
+                    myOption.text = obj.player_name;
+                    myOption.value = obj.player_name;
+                    b7Select.add(myOption, null);
+                });
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            }) // end of fetching
+
+        let teamSlots = ["QB", "RB1", "RB2", "WR1", "WR2", "TE", "FLEX", "DEFENSE", "K", "BENCH1", "BENCH2", "BENCH3", "BENCH4", "BENCH5", "BENCH6", "BENCH7"];
+
         function submitTeam() {
-            document.getElementById("btnSave").disabled = true;
-
-            //validation
-            for (let i = 0; i < teamSlots.length; i++) {
-                if (document.getElementById(teamSlots[i]).value == "" || document.getElementById(teamSlots[i]).value == null) {
-                    alert("Please make sure all slots are filled in with a player");
+            let team = [];
+            
+            
+            for(let i = 0; i < teamSlots.length; i++){
+                let checking = document.getElementById(teamSlots[i]).value;
+                if(team.indexOf(checking)==-1){
+                    team.push(document.getElementById(teamSlots[i]).value);
+                }else{
+                    alert("Players can only be used once in the team");
                     return;
                 }
             }
-            // push players into array
-            let team = [];
-            for (let i = 0; i < teamSlots.length; i++) {
-                team.push(document.getElementById(teamSlots[i]).value);
+
+            for(let i = 0; i < teamSlots.length; i++){
                 document.getElementById(teamSlots[i]).disabled = true;
             }
 
-            //output team
-            document.getElementById("result").innerHTML = "Your team: " + "<br/>" + team.join("<br/>")
+            document.getElementById("result").innerHTML = team.join("<br/>");
 
         }
-
-        function update(){
-
-            //validation
-            for (let i = 0; i < teamSlots.length; i++) {
-                if (document.getElementById(teamSlots[i]).value == "" || document.getElementById(teamSlots[i]).value == null) {
-                    alert("Please make sure all slots are filled in with a player");
-                    return;
-                }
-            }
-
-            //push players into array
-            let team = [];
-            for (let i = 0; i < teamSlots.length; i++) {
-                team.push(document.getElementById(teamSlots[i]).value);
+        function handleChange() {
+            document.getElementById("result").innerHTML = "";
+            for(let i = 0; i < teamSlots.length; i++){
                 document.getElementById(teamSlots[i]).disabled = false;
             }
-            document.getElementById("result").innerHTML = "";
-            document.getElementById("btnSave").disabled = false;
-            
-
-
         }
 
-        function handleChange() {
-
-            // clear result, re enable button
-            document.getElementById("result").innerHTML = "Your team: ";
-            document.getElementById("btnSave").disabled = false;
+        function update() {
+            document.getElementById("result").innerHTML = "";
+            for(let i = 0; i < teamSlots.length; i++){
+                document.getElementById(teamSlots[i]).disabled = false;
+            }
         }
     </script>
 
