@@ -1,0 +1,92 @@
+[
+{
+"player_name": "Patrick Mahomes",
+"player_pos" : "QB",
+"player_num": 15,
+"player_team": "Kansas City Chiefs"
+},
+{
+"player_name": "Derrick Henry",
+"player_pos" : "RB",
+"player_num": 22,
+"player_team": "Tennessee Titans"
+},
+{
+"player_name": "Christian McCaffrey",
+"player_pos" : "RB",
+"player_num": 22,
+"player_team": "Carolina Panthers"
+},
+{
+"player_name": "DeAndre Hopkins",
+"player_pos" : "WR",
+"player_num": 10,
+"player_team": "Arizona Cardinals"
+},
+{
+"player_name": "Devante Adams",
+"player_pos" : "WR",
+"player_num": 17,
+"player_team": "Green Bay Packers"
+},
+{
+"player_name": "Tyreek Hill",
+"player_pos" : "WR",
+"player_num": 10,
+"player_team": "Kansas City Chiefs"
+},
+{
+"player_name": "Travis Kelce",
+"player_pos" : "TE",
+"player_num": 87,
+"player_team": "Kansas City Chiefs"
+},
+{
+"player_name": "Rob Grownkowski",
+"player_pos" : "TE",
+"player_num": 87,
+"player_team": "Tampa Bay Buccaneers"
+},
+{
+"player_name": "Jake Elliot",
+"player_pos" : "K",
+"player_num": 4,
+"player_team": "Philadelphia Eagles"
+},
+{
+"player_name": "Tom Brady",
+"player_pos" : "QB",
+"player_num": 12,
+"player_team": "Tampa Bay Buccaneers"
+},
+{
+"player_name": "Saquon Barkley",
+"player_pos" : "RB",
+"player_num": 26,
+"player_team": "New York Giants"
+},
+{
+"player_name": "DeVante Parker",
+"player_pos" : "WR",
+"player_num": 11,
+"player_team": "Miami Dolphins"
+},
+{
+"player_name": "Jarvis Landry",
+"player_pos" : "WR",
+"player_num": 80,
+"player_team": "Clevland Browns"
+},
+{
+"player_name": "Nick Chubb",
+"player_pos" : "RB",
+"player_num": 24,
+"player_team": "Clevland Browns"
+},
+{
+"player_name": "Josh Jacobs",
+"player_pos" : "RB",
+"player_num": 26,
+"player_team": "Las Vegas Raiders"
+}
+]
