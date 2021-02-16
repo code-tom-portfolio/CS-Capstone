@@ -4,6 +4,7 @@
 
 <head>
 
+    <link rel="stylesheet" href="style.css">
 
 
     <!-- 3 files below are for the use of bootstrap formatting-->
@@ -23,17 +24,22 @@
         body {
             padding: 1em;
             text-align: center;
-            background-color: lightskyblue;
+            background-color: lightblue;
         }
 
         a {
-            color: blue;
+            color: black;
             font-weight: bold;
         }
 
         a:hover {
-            color: red;
+            color:black;
+            background-color: rgb(195, 238, 255);
             font-weight: bold;
+        }
+
+        h1{
+            color: black;
         }
     </style>
 </head>
@@ -318,19 +324,19 @@
 
         function submitTeam() {
             let team = [];
-            
-            
-            for(let i = 0; i < teamSlots.length; i++){
+
+
+            for (let i = 0; i < teamSlots.length; i++) {
                 let checking = document.getElementById(teamSlots[i]).value;
-                if(team.indexOf(checking)==-1){
+                if (team.indexOf(checking) == -1) {
                     team.push(document.getElementById(teamSlots[i]).value);
-                }else{
+                } else {
                     alert("Players can only be used once in the team");
                     return;
                 }
             }
 
-            for(let i = 0; i < teamSlots.length; i++){
+            for (let i = 0; i < teamSlots.length; i++) {
                 document.getElementById(teamSlots[i]).disabled = true;
             }
 
@@ -339,14 +345,14 @@
         }
         function handleChange() {
             document.getElementById("result").innerHTML = "";
-            for(let i = 0; i < teamSlots.length; i++){
+            for (let i = 0; i < teamSlots.length; i++) {
                 document.getElementById(teamSlots[i]).disabled = false;
             }
         }
 
         function update() {
             document.getElementById("result").innerHTML = "";
-            for(let i = 0; i < teamSlots.length; i++){
+            for (let i = 0; i < teamSlots.length; i++) {
                 document.getElementById(teamSlots[i]).disabled = false;
             }
         }

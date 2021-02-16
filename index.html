@@ -4,8 +4,6 @@
 
 <head>
 
-
-
     <!-- 3 files below are for the use of bootstrap formatting-->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -14,7 +12,8 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-
+    <!-- For font awesome icons-->
+    <script src="https://kit.fontawesome.com/cc293f0187.js" crossorigin="anonymous"></script>
 
     <!-- html index file for project-->
     <title>Max Fantasy</title>
@@ -23,28 +22,40 @@
         body {
             padding: 1em;
             text-align: center;
-            background-color: lightskyblue;
-        }
-
-        #getStarted {
-            font-size: 20px;
-            background-color: lightgreen;
-            color: red;
+            background-color: lightblue;
         }
 
         a {
-            color: blue;
+            color: black;
             font-weight: bold;
         }
 
         a:hover {
-            color: red;
+            color:black;
+            background-color: rgb(195, 238, 255);
             font-weight: bold;
         }
-        #description{
-            background-color: lightgrey;
-            letter-spacing: 1px;
-            padding: 10px;
+
+        h1{
+            color: black;
+        }
+
+        #getStarted {
+            font-size: 20px;
+        }
+
+        #description {
+            background-color: rgb(238, 240, 240);
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            line-height: 50px;
+            padding: 40px;
+            font-size: large;
+              
+        }
+        i{
+            font-size: 115px;
+            color: brown;
         }
     </style>
 </head>
@@ -66,20 +77,25 @@
     <h1>Max Fantasy</h1>
     <br />
     <div id="description">
-        <p>Fantasy Football is a great way to stay involved with the teams and players in the National Football league.
-            Max Fantasy wants to help you with the development and maintenence of your fantasy roster! Through
+        <h3>Maximize your fantasy roster!</h3><br />
+        <p>Fantasy Football is a great way to stay involved with the teams and players in the National Football League.
+            Max Fantasy wants to help you with the development and maintenence of your fantasy roster! By
             identifying
             your fantasy league type and the players that you have on your team, we want to maximize your fantasy
             football potential
-            by providing reccomendations and up to date analysis of what is going on in the league and the direction you
+            by providing reccomendations and up to date analysis about what is going on in the league and the direction you
             should take your team towards!
             If you want to up your fantasy game, get started with Max Fantasy NOW!
         </p>
+
+        <i class="fas fa-football-ball"></i>
+
     </div>
     <br />
+
     <!--Take user to sign in page-->
     <!--for now, just taking them to build a team-->
-    <button id="getStarted" class="btn-rounded"><a href="leagueType.html">Get Started!</a></button>
+    <button id="getStarted" class="btn btn-rounded"><a href="leagueType.html">Get Started!</a></button>
 
 
     <script>
