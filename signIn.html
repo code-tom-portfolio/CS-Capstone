@@ -72,7 +72,7 @@
         </div>
     </nav>
     <img src="MaxFantasy.png" alt="Logo" style="height: 200px; width: 200px;"/>
-    <h3>Please Sign In with Google</h3>
+    <h3>Please Sign In with Google to continue</h3>
     <br /><br />
     <div class="row">
         <div class="col-sm-5"></div>
@@ -94,6 +94,10 @@
             console.log('Name: ' + profile.getName());
             console.log('Image URL: ' + profile.getImageUrl());
             console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+            // not working, need to set up users to store in DB
+            let users = [];
+            users += new User(profile.getId, profile.getName, profile.getImageUrl, profile.getEmail);
         }
 
         // For Sign Out
