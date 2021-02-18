@@ -72,11 +72,20 @@
         </div>
     </nav>
     <img src="MaxFantasy.png" alt="Logo" style="height: 200px; width: 200px;"/>
-
+    <h3>Please Sign In with Google</h3>
     <br /><br />
-    <div id="google" class="g-signin2" data-onsuccess="onSignIn"></div>
+    <div class="row">
+        <div class="col-sm-5"></div>
+    <div id="google" class="g-signin2 col-sm-2" data-onsuccess="onSignIn"></div>
+    <div class="col-sm-5"></div>
+    </div>
     <br/>
-    <a class="btn btn-primary" href="index.html" onclick="signOut();">Sign out</a>
+
+    <!--
+        For Sign out
+        <a class="btn btn-primary" href="index.html" onclick="signOut();">Sign out</a> 
+    
+    -->
 
     <script>
         function onSignIn(googleUser) {
@@ -87,13 +96,13 @@
             console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
         }
 
-
-        function signOut() {
+        // For Sign Out
+       /*  function signOut() {
             var auth2 = gapi.auth2.getAuthInstance();
             auth2.signOut().then(function () {
                 console.log('User signed out.');
             });
-        }
+        } */
 
     </script>
 </body>
