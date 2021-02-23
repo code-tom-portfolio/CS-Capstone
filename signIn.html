@@ -6,10 +6,12 @@
     <meta charset="utf-8">
 
     <!-- For Google Sign in-->
-    <meta name="google-signin-client_id" content="225358383782-6egbfm6sfsfl684m8hrblcu2je1e0nuq.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="225358383782-6egbfm6sfsfl684m8hrblcu2je1e0nuq.apps.googleusercontent.com" />
     <!-- For Google API Sign in-->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    
+
+
+
     <!-- 3 files below are for the use of bootstrap formatting-->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -21,7 +23,7 @@
     <!-- For font awesome icons-->
     <script src="https://kit.fontawesome.com/cc293f0187.js" crossorigin="anonymous"></script>
 
-    
+
 
     <!-- html index file for project-->
     <title>Max Fantasy</title>
@@ -48,9 +50,10 @@
             color: black;
         }
 
-        #google{
+        #google {
             justify-content: center;
         }
+
         i {
             font-size: 115px;
             color: brown;
@@ -67,36 +70,27 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.html">Home</a></li>
                 <li><a href="/">MyTeam</a></li>
-                <li><a href="/">About</a></li>
                 <li><a href="privacy.html">Privacy</a></li>
             </ul>
         </div>
     </nav>
-    <img src="MaxFantasy.png" alt="Logo" style="height: 200px; width: 200px;"/>
+    <img src="MaxFantasy.png" alt="Logo" style="height: 200px; width: 200px;" />
     <h3>Please Sign In with Google to continue</h3>
     <br /><br />
-    <div class="col-sm-5"></div>
 
-    <!-- take user to league type choice-->
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <div class="col-sm-5"></div>
+    <div class="row">
+        <div class="col-sm-5"></div>
 
-    <br/>
+        <!-- take user to league type choice-->
+        <div class="g-signin2 col-sm-2" data-onsuccess="onSignIn"></div>
+        <div class="col-sm-5"></div>
+    </div>
+    <br />
     <button class="btn btn-primary" onclick="signOut()">Sign out</button>
 
-    <br/>
-    <br/>
+    <br />
+    <br />
     <button class="btn"><a href="leagueType.html">Build Team</a></button>
-
-    
-
-    <br/>
-
-    <!--
-        For Sign out
-        <a class="btn btn-primary" href="index.html" onclick="signOut();">Sign out</a> 
-    
-    -->
 
     <script>
         function onSignIn(googleUser) {
@@ -105,15 +99,15 @@
             console.log('Name: ' + profile.getName());
             //console.log('Image URL: ' + profile.getImageUrl());
             console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-            
+
 
             // To take user to league type
             //window.location.href = "leagueType.html";
 
-            
+
             // need to set up users to store in DB
             //let users = [];
-           // users += new User(profile.getId, profile.getName, profile.getImageUrl, profile.getEmail);
+            // users += new User(profile.getId, profile.getName, profile.getImageUrl, profile.getEmail);
         }
 
         // For Sign Out
@@ -122,7 +116,7 @@
             auth2.signOut().then(function () {
                 console.log('User signed out.');
             });
-        } 
+        }
 
     </script>
 </body>
