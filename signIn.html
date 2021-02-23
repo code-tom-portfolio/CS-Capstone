@@ -81,6 +81,13 @@
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <div class="col-sm-5"></div>
 
+    <br/>
+    <button class="btn btn-primary" onclick="signOut()">Sign out</button>
+
+    <br/>
+    <br/>
+    <button class="btn"><a href="leagueType.html">Build Team</a></button>
+
     
 
     <br/>
@@ -98,7 +105,10 @@
             console.log('Name: ' + profile.getName());
             //console.log('Image URL: ' + profile.getImageUrl());
             console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-            window.location.href = "leagueType.html";
+            
+
+            // To take user to league type
+            //window.location.href = "leagueType.html";
 
             
             // need to set up users to store in DB
@@ -107,12 +117,12 @@
         }
 
         // For Sign Out
-       /*  function signOut() {
+        function signOut() {
             var auth2 = gapi.auth2.getAuthInstance();
             auth2.signOut().then(function () {
                 console.log('User signed out.');
             });
-        } */
+        } 
 
     </script>
 </body>
