@@ -4,7 +4,12 @@
 
 <head>
 
-    <link rel="stylesheet" href="style.css" />
+    <!-- For Google Sign in-->
+    <meta name="google-signin-client_id"
+        content="225358383782-6egbfm6sfsfl684m8hrblcu2je1e0nuq.apps.googleusercontent.com" />
+    <!-- For Google API Sign in-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
 
     <!-- 3 files below are for the use of bootstrap formatting-->
 
@@ -32,12 +37,12 @@
         }
 
         a:hover {
-            color:black;
+            color: black;
             background-color: rgb(195, 238, 255);
             font-weight: bold;
         }
 
-        h1{
+        h1 {
             color: black;
         }
     </style>
@@ -57,6 +62,12 @@
             </ul>
         </div>
     </nav>
+    <div class="row">
+        <div class="col-sm-9"></div>
+            <div class="g-signin2 col-sm-2" data-onsuccess="onSignIn"></div>
+            <button class="btn col-sm-1" onclick="signOut()"><a href="index.html">Sign out</a></button>
+    </div>
+
     <h1>Max Fantasy</h1>
     <h3>Standard League</h3>
     <p>Please pick players from drop downs to fill your team</p>
@@ -170,6 +181,28 @@
     <div id="result"></div>
 
     <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            //console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+
+
+
+            // need to set up users to store in DB
+            //let users = [];
+            // users += new User(profile.getId, profile.getName, profile.getImageUrl, profile.getEmail);
+        }
+
+        // For Sign Out
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
 
         // fetch json
         fetch('dummyJSON.json')
@@ -180,7 +213,7 @@
                 myJSON = data;
 
                 // load drop downs with proper players in position
-                
+
                 // qb select
                 let qbSelect = document.getElementById("QB");
                 myJSON.map(function (obj, i) {

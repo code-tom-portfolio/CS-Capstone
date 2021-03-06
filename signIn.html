@@ -50,10 +50,6 @@
             color: black;
         }
 
-        #google {
-            justify-content: center;
-        }
-
         i {
             font-size: 115px;
             color: brown;
@@ -74,6 +70,14 @@
             </ul>
         </div>
     </nav>
+    <!--Allow user to sign out-->
+    <div class="row">
+        <div class="col-sm-10"></div>
+        <div class="col-sm-2">
+            <button class="btn" onclick="signOut()"><a href="index.html">Sign out</a></button>
+        </div>
+    </div>
+
     <img src="MaxFantasy.png" alt="Logo" style="height: 200px; width: 200px;" />
     <h3>Please Sign In with Google to continue</h3>
     <br /><br />
@@ -85,13 +89,10 @@
         <div class="g-signin2 col-sm-2" data-onsuccess="onSignIn"></div>
         <div class="col-sm-5"></div>
     </div>
-    <br />
-    <button class="btn btn-primary" onclick="signOut()">Sign out</button>
-
-    <br />
-    <br />
+    <!--
+        <br />
     <button class="btn"><a href="leagueType.html">Build Team</a></button>
-
+    -->
     <script>
         function onSignIn(googleUser) {
             var profile = googleUser.getBasicProfile();
@@ -102,7 +103,7 @@
 
 
             // To take user to league type
-            //window.location.href = "leagueType.html";
+            window.location.href = "leagueType.html";
 
 
             // need to set up users to store in DB
