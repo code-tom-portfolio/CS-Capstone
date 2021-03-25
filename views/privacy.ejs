@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+
+    <!-- 3 files below are for the use of bootstrap formatting-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- For font awesome icons-->
+    <script src="https://kit.fontawesome.com/cc293f0187.js" crossorigin="anonymous"></script>
+
+    <!-- html index file for project-->
+    <title>Max Fantasy | <%= title %>
+    </title>
+
+    <style>
+        body {
+            padding: 1em;
+            text-align: center;
+            background-color: lightblue;
+        }
+
+        a {
+            color: black;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: black;
+            background-color: rgb(195, 238, 255);
+            font-weight: bold;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        #getStarted {
+            font-size: 20px;
+        }
+
+        #description {
+            background-color: rgb(238, 240, 240);
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            line-height: 50px;
+            padding: 40px;
+            font-size: large;
+
+        }
+
+        i {
+            font-size: 115px;
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+        <img src="MaxFantasy.png" alt="Logo" style="height: 200px; width: 200px;">
+
+        <br /><br />
+        <p>Max Fantasy Privacy Policy</p>
+</body>
+
+</html>

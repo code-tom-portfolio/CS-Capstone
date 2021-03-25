@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+
+    <!-- 3 files below are for the use of bootstrap formatting-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- For font awesome icons-->
+    <script src="https://kit.fontawesome.com/cc293f0187.js" crossorigin="anonymous"></script>
+
+    <!-- html index file for project-->
+    <title>Max Fantasy | <%= title %>
+    </title>
+
+    <style>
+        body {
+            padding: 1em;
+            text-align: center;
+            background-color: lightblue;
+        }
+
+        a {
+            color: black;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: black;
+            background-color: rgb(195, 238, 255);
+            font-weight: bold;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        #getStarted {
+            font-size: 20px;
+        }
+
+        #description {
+            background-color: rgb(238, 240, 240);
+            letter-spacing: 1.5px;
+            word-spacing: 1.5px;
+            line-height: 50px;
+            padding: 5px;
+            font-size: large;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+        <br />
+        <div id="description">
+            <h3>Maximize your fantasy roster!</h3>
+            <p>Fantasy Football is a great way to stay involved with the teams and players in the National Football
+                League.
+                Max Fantasy wants to help you with the development and maintenence of your fantasy roster! By
+                identifying
+                your fantasy league type and the players that you have on your team, we want to maximize your fantasy
+                football potential
+                by providing reccomendations and up to date analysis about what is going on in the league and the
+                direction you
+                should take your team towards!
+                If you want to up your fantasy game, get started with Max Fantasy NOW!
+            </p>
+            <img src="MaxFantasy.png" alt="Logo" style="height: 125px; width: 125px;">
+
+        </div>
+        <br/>
+
+        <!--Take user to sign in page-->
+
+        <button id="getStarted" class="btn btn-rounded"><a href="/signIn">Get Started!</a></button>
+
+
+        <script>
+
+
+        </script>
+
+</body>
+
+</html>

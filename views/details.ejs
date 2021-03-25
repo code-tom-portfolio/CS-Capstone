@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+
+    <!-- 3 files below are for the use of bootstrap formatting-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- For font awesome icons-->
+    <script src="https://kit.fontawesome.com/cc293f0187.js" crossorigin="anonymous"></script>
+
+    <!-- html index file for project-->
+    <title>Max Fantasy | <%= title %>
+    </title>
+
+    <style>
+        body {
+            padding: 1em;
+            text-align: center;
+            background-color: lightblue;
+        }
+
+        a {
+            color: black;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: black;
+            background-color: rgb(195, 238, 255);
+            font-weight: bold;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        #getStarted {
+            font-size: 20px;
+        }
+
+        #description {
+            background-color: rgb(238, 240, 240);
+            letter-spacing: 2px;
+            word-spacing: 2px;
+            line-height: 50px;
+            padding: 40px;
+            font-size: large;
+
+        }
+
+        i {
+            font-size: 115px;
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+        <h1>My Team</h1>
+        <p>Shows first team built by user</p>
+        <p>To see new team, delete previous teams</p>
+        <div class="details">
+            <br>
+            <% if (showTeam){ %>
+                <label>USER: </label>
+                <%= showTeam.userEmail %><br>
+                    <label>QB: </label>
+                    <%= showTeam.QB %><br>
+                        <label>RB1: </label>
+                        <%= showTeam.RB1 %><br>
+                            <label>RB2: </label>
+                            <%= showTeam.RB2 %><br>
+                                <label>WR1: </label>
+                                <%= showTeam.WR1 %><br>
+                                    <label>WR2: </label>
+                                    <%= showTeam.WR2 %> <br>
+                                        <label>TE: </label>
+                                        <%= showTeam.TE %> <br>
+                                            <label>FLEX: </label>
+                                            <%= showTeam.FLEX %> <br>
+                                                <label>DEFENSE: </label>
+                                                <%= showTeam.DEFENSE %> <br>
+                                                    <label>K: </label>
+                                                    <%= showTeam.K %> <br>
+                                                        <label>BENCH1: </label>
+                                                        <%= showTeam.BENCH1 %> <br>
+                                                            <label>BENCH2: </label>
+                                                            <%= showTeam.BENCH2 %> <br>
+                                                                <label>BENCH3: </label>
+                                                                <%= showTeam.BENCH3 %> <br>
+                                                                    <label>BENCH4: </label>
+                                                                    <%= showTeam.BENCH4 %> <br>
+                                                                        <label>BENCH5: </label>
+                                                                        <%= showTeam.BENCH5 %> <br>
+                                                                            <label>BENCH6: </label>
+                                                                            <%= showTeam.BENCH6 %> <br>
+                                                                                <label>BENCH7: </label>
+                                                                                <%= showTeam.BENCH7 %> <br>
+                                                                                    <br />
+                                                                                    <button class="btn"><a
+                                                                                            class="delete"
+                                                                                            data-doc="<%= showTeam._id %>">Delete
+                                                                                            Team</a></button>
+                                                                                    <% }else { %>
+                                                                                        <p>no team to display...</p>
+                                                                                        <p>May not be signed in OR no team has been built</p>
+                                                                                        
+                                                                                        <% } %>
+
+        </div>
+
+
+        <script>
+            const trashcan = document.querySelector('a.delete');
+            trashcan.addEventListener('click', (e) => {
+                const endpoint = `/myTeam/${trashcan.dataset.doc}`;
+
+                fetch(endpoint, {
+                    method: 'DELETE',
+                })
+                    .then(response => response.json())
+                    .then(data => window.location.href = data.redirect)
+                    .catch(err => console.log(err));
+            });
+
+
+        </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- For Google Sign in-->
+    <meta name="google-signin-client_id"
+        content="225358383782-6egbfm6sfsfl684m8hrblcu2je1e0nuq.apps.googleusercontent.com" />
+    <!-- For Google API Sign in-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- 3 files below are for the use of bootstrap formatting-->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+    <!-- html index file for project-->
+    <title>Max Fantasy | <%= title %>
+    </title>
+    <style>
+        body {
+            padding: 1em;
+            text-align: center;
+            background-color: lightblue;
+        }
+
+        a {
+            color: black;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: black;
+            background-color: rgb(195, 238, 255);
+            font-weight: bold;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        span {
+            font-style: italic;
+        }
+
+        .stats {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .stats td,
+        .stats th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .stats tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .stats tr:hover {
+            background-color: #ddd;
+        }
+
+        .stats th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+        <div class="row">
+            <div class="col-sm-9"></div>
+            <div class="g-signin2 col-sm-2" data-onsuccess="onSignIn"></div>
+            <button class="btn col-sm-1" onclick="signOut()"><a href="index">Sign out</a></button>
+        </div>
+        <h2>Player Stats</h2>
+        <br />
+
+        <table class="stats">
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Position</th>
+                    <th>Stat 1</th>
+                    <th>Value 1</th>
+                    <th>Stat 2</th>
+                    <th>Value 2</th>
+                    <th>Stat 3</th>
+                    <th>Value 3</th>
+                    <th>Stat 4</th>
+                    <th>Value 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <select id="name"></select>
+                    </td>
+                    <td>
+                        <span id="position"></span>
+                    </td>
+                    <td>
+                        <span id="stat_1"></span>
+                    </td>
+                    <td>
+                        <span id="value_1"></span>
+                    </td>
+                    <td>
+                        <span id="stat_2"></span>
+                    </td>
+                    <td>
+                        <span id="value_2"></span>
+                    </td>
+                    <td>
+                        <span id="stat_3"></span>
+                    </td>
+                    <td>
+                        <span id="value_3"></span>
+                    </td>
+                    <td>
+                        <span id="stat_4"></span>
+                    </td>
+                    <td>
+                        <span id="value_4"></span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+        <br>
+        <br>
+        <div class="search">
+            <label>Search for Player: </label><input id="searchBar" type="text">
+        </div>
+        <br>
+        <div class="result">
+            <table class="stats" id="playerList">
+
+            </table>
+        </div>
+
+
+
+        <script>
+
+            function onSignIn(googleUser) {
+                var profile = googleUser.getBasicProfile();
+                console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                console.log('Name: ' + profile.getName());
+                //console.log('Image URL: ' + profile.getImageUrl());
+                console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+            }
+
+            // For Sign Out
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                });
+            }
+            let myJson = [];
+            const load = fetch('csvjson.json')
+                .then(function (response) {
+                    return response.json();
+                })
+
+                .then(function (data) {
+                    myJson = data;
+
+                    let mySelect = document.getElementById("name");
+
+                    myJson.map(function (obj, i) {
+                        let myOption = document.createElement("option");
+                        myOption.text = obj.Name;
+                        myOption.value = i;
+                        mySelect.add(myOption, null);
+                    });
+
+                    let event = new Event('change');
+                    mySelect.dispatchEvent(event);
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+
+            document.getElementById("name").addEventListener('change', statsDisplay);
+            function statsDisplay() {
+                let myIndex = document.getElementById("name").value;
+                let myStat = myJson[myIndex];
+
+                document.getElementById("position").innerHTML = myStat.Position;
+                document.getElementById("stat_1").innerHTML = myStat.Stat1;
+                document.getElementById("value_1").innerHTML = myStat.Value1;
+                document.getElementById("stat_2").innerHTML = myStat.Stat2;
+                document.getElementById("value_2").innerHTML = myStat.Value2;
+                document.getElementById("stat_3").innerHTML = myStat.Stat3;
+                document.getElementById("value_3").innerHTML = myStat.Vlue3;
+                document.getElementById("stat_4").innerHTML = myStat.Stat4;
+                document.getElementById("value_4").innerHTML = myStat.Value4;
+
+            }
+
+            const searchBar = document.getElementById("searchBar");
+            console.log(searchBar);
+            searchBar.addEventListener('keyup', (e) => {
+                const searchString = e.target.value.toLowerCase();
+                const filteredPlayer = myJson.filter(player => {
+                    return player.Name.toLowerCase().includes(searchString);
+                })
+                console.log(filteredPlayer)
+                displayPlayer(filteredPlayer);
+            });
+
+            const playerList = document.getElementById('playerList');
+            const displayPlayer = (players) => {
+                const htmlString = players
+                    .map((player) => {
+                        return `
+            <table class="stats">
+                <thead>
+                    <tr>
+                    <th>Player</th>
+                    <th>Position</th>
+                    <th>Stat 1</th>
+                    <th>Value 1</th>
+                    <th>Stat 2</th>
+                    <th>Value 2</th>
+                    <th>Stat 3</th>
+                    <th>Value 3</th>
+                    <th>Stat 4</th>
+                    <th>Value 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>${player.Name}</td>
+                        <td>${player.Position}</td>
+                        <td>${player.Stat1}</td>
+                        <td>${player.Value1}</td>
+                        <td>${player.Stat2}</td>
+                        <td>${player.Value2}</td>
+                        <td>${player.Stat3}</td>
+                        <td>${player.Vlue3}</td>
+                        <td>${player.Stat4}</td>
+                        <td>${player.Value4}</td>
+
+                    </tr>
+                </tbody>
+
+                
+            </table>
+        `;
+                    })
+                    .join('');
+                playerList.innerHTML = htmlString;
+            };
+
+            load();
+
+        </script>
+
+
+
+
+
+</body>
+
+</html>
