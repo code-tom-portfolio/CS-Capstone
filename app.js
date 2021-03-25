@@ -66,7 +66,7 @@ app.get('/stats', (req, res) => {
 app.get('/myTeam', (req, res) => {
     res.render('myTeam', { title: 'myTeam' });
 });
-// Get all data, and display on the page.
+// Get only user data, and display on the page.
 
 app.get('/myTeam/:userEmail', (req, res) => {
     const userEmail = req.params.userEmail;
