@@ -18,6 +18,15 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.js"
+        integrity="sha512-eSeh0V+8U3qoxFnK3KgBsM69hrMOGMBy3CNxq/T4BArsSQJfKVsKb5joMqIPrNMjRQSTl4xG8oJRpgU2o9I7HQ=="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css"
+        integrity="sha512-yVvxUQV0QESBt1SyZbNJMAwyKvFTLMyXSyBHDO4BG5t7k/Lw34tyqlSDlKIrIENIzCl+RVUNjmCPG+V/GMesRw=="
+        crossorigin="anonymous" />
+
 
 
     <!-- html index file for project-->
@@ -56,7 +65,8 @@
             <button class="btn col-sm-1" onclick="signOut()"><a href="index">Sign out</a></button>
         </div>
         <h3>Standard League</h3>
-        <p><i>Only one team can be stored in a given account. If team has been built, delete old team to build new one</i></p>
+        <p><i>Only one team can be stored in a given account. If team has been built, delete old team to build new
+                one</i></p>
         <br />
 
         <form id="form" method="POST">
@@ -81,7 +91,7 @@
             <div class="row">
                 <p class="col-sm-2"></p>
                 <p class="col-sm-2">QB:</p>
-                <select name="QB" id="QB" class="col-sm-4"></select>
+                <select class="chosen" name="QB" id="QB" class="col-sm-4"></select>
             </div>
 
             <!-- RB drop downs-->
@@ -172,7 +182,7 @@
                 <p class="col-sm-2">BENCH:</p>
                 <select name="BENCH7" id="BENCH7" class="col-sm-4"></select>
             </div>
-            <br/>
+            <br />
             <button id="btnSave" class="btn btn-primary" onclick="submitTeam()" type="button">Save Team</button>
 
         </form>
@@ -195,6 +205,7 @@
                         myOption.value = obj.full_name;
                         defenses.add(myOption, null);
                     });
+                    $('#DEFENSE').chosen();
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -220,7 +231,9 @@
                             myOption.value = obj.Name;
                             qbSelect.add(myOption, null);
                         }
+                        
                     });
+                    $('#QB').chosen();
 
                     //rb selects
                     let rbSelect = document.getElementById("RB1");
@@ -232,6 +245,8 @@
                             rbSelect.add(myOption, null);
                         }
                     });
+                    $('#RB1').chosen();
+
                     let rb2Select = document.getElementById("RB2");
                     myJSON.map(function (obj, i) {
                         let myOption = document.createElement("option");
@@ -241,6 +256,7 @@
                             rb2Select.add(myOption, null);
                         }
                     });
+                    $('#RB2').chosen();
 
                     // wr selects
                     let wrSelect = document.getElementById("WR1");
@@ -252,6 +268,8 @@
                             wrSelect.add(myOption, null);
                         }
                     });
+                    $('#WR1').chosen();
+
                     let wr2Select = document.getElementById("WR2");
                     myJSON.map(function (obj, i) {
                         let myOption = document.createElement("option");
@@ -261,6 +279,8 @@
                             wr2Select.add(myOption, null);
                         }
                     });
+                    $('#WR2').chosen();
+
 
                     // te select
                     let teSelect = document.getElementById("TE");
@@ -272,6 +292,7 @@
                             teSelect.add(myOption, null);
                         }
                     });
+                    $('#TE').chosen();
 
                     // FLEX select
                     let flexSelect = document.getElementById("FLEX");
@@ -283,6 +304,7 @@
                             flexSelect.add(myOption, null);
                         }
                     });
+                    $('#FLEX').chosen();
 
                     // Kicker select
                     let kSelect = document.getElementById("K");
@@ -294,6 +316,7 @@
                             kSelect.add(myOption, null);
                         }
                     });
+                    $('#K').chosen();
 
 
                     // BENCH selects
@@ -306,6 +329,8 @@
                             b1Select.add(myOption, null);
                         }
                     });
+                    $('#BENCH1').chosen();
+
                     let b2Select = document.getElementById("BENCH2");
                     myJSON.map(function (obj, i) {
                         if (obj.Position == "QB" || obj.Position == "RB" || obj.Position == "WR" || obj.Position == "TE" || obj.Position == "SPEC") {
@@ -315,6 +340,8 @@
                             b2Select.add(myOption, null);
                         }
                     });
+                    $('#BENCH2').chosen();
+
                     let b3Select = document.getElementById("BENCH3");
                     myJSON.map(function (obj, i) {
                         if (obj.Position == "QB" || obj.Position == "RB" || obj.Position == "WR" || obj.Position == "TE" || obj.Position == "SPEC") {
@@ -324,6 +351,8 @@
                             b3Select.add(myOption, null);
                         }
                     });
+                    $('#BENCH3').chosen();
+
                     let b4Select = document.getElementById("BENCH4");
                     myJSON.map(function (obj, i) {
                         if (obj.Position == "QB" || obj.Position == "RB" || obj.Position == "WR" || obj.Position == "TE" || obj.Position == "SPEC") {
@@ -333,6 +362,8 @@
                             b4Select.add(myOption, null);
                         }
                     });
+                    $('#BENCH4').chosen();
+
                     let b5Select = document.getElementById("BENCH5");
                     myJSON.map(function (obj, i) {
                         if (obj.Position == "QB" || obj.Position == "RB" || obj.Position == "WR" || obj.Position == "TE" || obj.Position == "SPEC") {
@@ -342,6 +373,8 @@
                             b5Select.add(myOption, null);
                         }
                     });
+                    $('#BENCH5').chosen();
+
                     let b6Select = document.getElementById("BENCH6");
                     myJSON.map(function (obj, i) {
                         if (obj.Position == "QB" || obj.Position == "RB" || obj.Position == "WR" || obj.Position == "TE" || obj.Position == "SPEC") {
@@ -351,6 +384,8 @@
                             b6Select.add(myOption, null);
                         }
                     });
+                    $('#BENCH6').chosen();
+
                     let b7Select = document.getElementById("BENCH7");
                     myJSON.map(function (obj, i) {
                         if (obj.Position == "QB" || obj.Position == "RB" || obj.Position == "WR" || obj.Position == "TE" || obj.Position == "SPEC") {
@@ -360,6 +395,7 @@
                             b7Select.add(myOption, null);
                         }
                     });
+                    $('#BENCH7').chosen();
 
                 })
                 .catch(function (error) {
@@ -382,12 +418,12 @@
                     }
                 }
                 document.getElementById("form").submit();
-                
+
 
             }
 
 
-            
+
 
             /*****
             function update() {
@@ -404,7 +440,7 @@
                 console.log('Name: ' + profile.getName());
                 //console.log('Image URL: ' + profile.getImageUrl());
                 console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-                
+
                 document.getElementById("loadUser").value = profile.getEmail();
                 document.getElementById("loadUser").innerHTML = profile.getEmail();
             }
