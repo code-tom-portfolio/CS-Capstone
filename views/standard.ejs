@@ -190,6 +190,7 @@
 
 
         <script>
+            let teams = [];
             // fetch nfl teams
             fetch('nfl_teams.json')
                 .then(function (response) {
@@ -200,6 +201,7 @@
 
                     let defenses = document.getElementById("DEFENSE");
                     myJSON.map(function (obj, i) {
+                        teams[i] = obj.full_name;
                         let myOption = document.createElement("option");
                         myOption.text = obj.full_name;
                         myOption.value = obj.full_name;
@@ -329,7 +331,14 @@
                             b1Select.add(myOption, null);
                         }
                     });
+                    for (let i = 0; i < teams.length; i++){
+                        let myOption = document.createElement("option");
+                        myOption.text = teams[i];
+                        myOption.value = teams[i];
+                        b1Select.add(myOption, null);
+                    }
                     $('#BENCH1').chosen();
+
 
                     let b2Select = document.getElementById("BENCH2");
                     myJSON.map(function (obj, i) {
@@ -340,7 +349,14 @@
                             b2Select.add(myOption, null);
                         }
                     });
+                    for (let i = 0; i < teams.length; i++){
+                        let myOption = document.createElement("option");
+                        myOption.text = teams[i];
+                        myOption.value = teams[i];
+                        b2Select.add(myOption, null);
+                    }
                     $('#BENCH2').chosen();
+
 
                     let b3Select = document.getElementById("BENCH3");
                     myJSON.map(function (obj, i) {
@@ -351,7 +367,14 @@
                             b3Select.add(myOption, null);
                         }
                     });
+                    for (let i = 0; i < teams.length; i++){
+                        let myOption = document.createElement("option");
+                        myOption.text = teams[i];
+                        myOption.value = teams[i];
+                        b3Select.add(myOption, null);
+                    }
                     $('#BENCH3').chosen();
+
 
                     let b4Select = document.getElementById("BENCH4");
                     myJSON.map(function (obj, i) {
@@ -362,7 +385,14 @@
                             b4Select.add(myOption, null);
                         }
                     });
+                    for (let i = 0; i < teams.length; i++){
+                        let myOption = document.createElement("option");
+                        myOption.text = teams[i];
+                        myOption.value = teams[i];
+                        b4Select.add(myOption, null);
+                    }
                     $('#BENCH4').chosen();
+
 
                     let b5Select = document.getElementById("BENCH5");
                     myJSON.map(function (obj, i) {
@@ -373,7 +403,14 @@
                             b5Select.add(myOption, null);
                         }
                     });
+                    for (let i = 0; i < teams.length; i++){
+                        let myOption = document.createElement("option");
+                        myOption.text = teams[i];
+                        myOption.value = teams[i];
+                        b5Select.add(myOption, null);
+                    }
                     $('#BENCH5').chosen();
+
 
                     let b6Select = document.getElementById("BENCH6");
                     myJSON.map(function (obj, i) {
@@ -384,7 +421,14 @@
                             b6Select.add(myOption, null);
                         }
                     });
+                    for (let i = 0; i < teams.length; i++){
+                        let myOption = document.createElement("option");
+                        myOption.text = teams[i];
+                        myOption.value = teams[i];
+                        b6Select.add(myOption, null);
+                    }
                     $('#BENCH6').chosen();
+
 
                     let b7Select = document.getElementById("BENCH7");
                     myJSON.map(function (obj, i) {
@@ -395,6 +439,12 @@
                             b7Select.add(myOption, null);
                         }
                     });
+                    for (let i = 0; i < teams.length; i++){
+                        let myOption = document.createElement("option");
+                        myOption.text = teams[i];
+                        myOption.value = teams[i];
+                        b7Select.add(myOption, null);
+                    }
                     $('#BENCH7').chosen();
 
                 })
