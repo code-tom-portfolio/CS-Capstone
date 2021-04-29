@@ -41,80 +41,109 @@
             color: black;
         }
 
-        #getStarted {
-            font-size: 20px;
+  /* Style the tab */
+  .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
         }
 
-        #description {
-            background-color: rgb(238, 240, 240);
-            letter-spacing: 2px;
-            word-spacing: 2px;
-            line-height: 50px;
-            padding: 40px;
-            font-size: large;
-
+        /* Style the buttons that are used to open the tab content */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
         }
 
-        i {
-            font-size: 115px;
-            color: brown;
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
         }
     </style>
 </head>
 
 <body>
     <%- include('./partials/nav.ejs') %>
-        <h1>My Team</h1>
-        <p>Shows first team built by user</p>
-        <p>To see new team, delete previous teams</p>
-        <div class="details">
-            <br>
-            <% if (showTeam){ %>
-                <label>USER: </label>
-                <%= showTeam.userEmail %><br>
-                    <label>QB: </label>
-                    <%= showTeam.QB %><br>
-                        <label>RB1: </label>
-                        <%= showTeam.RB1 %><br>
-                            <label>RB2: </label>
-                            <%= showTeam.RB2 %><br>
-                                <label>WR1: </label>
-                                <%= showTeam.WR1 %><br>
-                                    <label>WR2: </label>
-                                    <%= showTeam.WR2 %> <br>
-                                        <label>TE: </label>
-                                        <%= showTeam.TE %> <br>
-                                            <label>FLEX: </label>
-                                            <%= showTeam.FLEX %> <br>
-                                                <label>DEFENSE: </label>
-                                                <%= showTeam.DEFENSE %> <br>
-                                                    <label>K: </label>
-                                                    <%= showTeam.K %> <br>
-                                                        <label>BENCH1: </label>
-                                                        <%= showTeam.BENCH1 %> <br>
-                                                            <label>BENCH2: </label>
-                                                            <%= showTeam.BENCH2 %> <br>
-                                                                <label>BENCH3: </label>
-                                                                <%= showTeam.BENCH3 %> <br>
-                                                                    <label>BENCH4: </label>
-                                                                    <%= showTeam.BENCH4 %> <br>
-                                                                        <label>BENCH5: </label>
-                                                                        <%= showTeam.BENCH5 %> <br>
-                                                                            <label>BENCH6: </label>
-                                                                            <%= showTeam.BENCH6 %> <br>
-                                                                                <label>BENCH7: </label>
-                                                                                <%= showTeam.BENCH7 %> <br>
-                                                                                    <br />
-                                                                                    <button class="btn"><a
-                                                                                            class="delete"
-                                                                                            data-doc="<%= showTeam._id %>">Delete
-                                                                                            Team</a></button>
-                                                                                    <% }else { %>
-                                                                                        <p>no team to display...</p>
-                                                                                        <p>May not be signed in OR no team has been built</p>
-                                                                                        
-                                                                                        <% } %>
+        <div class="tab">
+            <button class="tablinks" onclick="openSect(event, 'MyTeam')">My Team</button>
+            <button class="tablinks" onclick="openSect(event, 'MyRecommendations')">My Recommendations</button>
 
+        </div>        
+        <div id="MyTeam" class="tabcontent">
+            <p>Shows first team built by user</p>
+            <p>To see new team, delete previous teams</p>
+            <div class="details">
+                <br>
+                <% if (showTeam){ %>
+                    <label>USER: </label>
+                    <%= showTeam.userEmail %><br>
+                        <label>QB: </label>
+                        <%= showTeam.QB %><br>
+                            <label>RB1: </label>
+                            <%= showTeam.RB1 %><br>
+                                <label>RB2: </label>
+                                <%= showTeam.RB2 %><br>
+                                    <label>WR1: </label>
+                                    <%= showTeam.WR1 %><br>
+                                        <label>WR2: </label>
+                                        <%= showTeam.WR2 %> <br>
+                                            <label>TE: </label>
+                                            <%= showTeam.TE %> <br>
+                                                <label>FLEX: </label>
+                                                <%= showTeam.FLEX %> <br>
+                                                    <label>DEFENSE: </label>
+                                                    <%= showTeam.DEFENSE %> <br>
+                                                        <label>K: </label>
+                                                        <%= showTeam.K %> <br>
+                                                            <label>BENCH1: </label>
+                                                            <%= showTeam.BENCH1 %> <br>
+                                                                <label>BENCH2: </label>
+                                                                <%= showTeam.BENCH2 %> <br>
+                                                                    <label>BENCH3: </label>
+                                                                    <%= showTeam.BENCH3 %> <br>
+                                                                        <label>BENCH4: </label>
+                                                                        <%= showTeam.BENCH4 %> <br>
+                                                                            <label>BENCH5: </label>
+                                                                            <%= showTeam.BENCH5 %> <br>
+                                                                                <label>BENCH6: </label>
+                                                                                <%= showTeam.BENCH6 %> <br>
+                                                                                    <label>BENCH7: </label>
+                                                                                    <%= showTeam.BENCH7 %> <br>
+                                                                                        <br />
+                                                                                        <button class="btn"><a
+                                                                                                class="delete"
+                                                                                                data-doc="<%= showTeam._id %>">Delete
+                                                                                                Team</a></button>
+                                                                                        <% }else { %>
+                                                                                            <p>no team to display...
+                                                                                            </p>
+                                                                                            <p>May not be signed in
+                                                                                                OR no team has been
+                                                                                                built</p>
+
+                                                                                            <% } %>
+
+            </div>
+        </div>
+        <div id="MyRecommendations" class="tabcontent">
+            <h3>Your Recommendations</h3>
         </div>
 
 
@@ -131,7 +160,26 @@
                     .catch(err => console.log(err));
             });
 
+            function openSect(evt, sect) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
 
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(sect).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
         </script>
 
 
