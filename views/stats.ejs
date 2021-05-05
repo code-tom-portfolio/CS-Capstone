@@ -209,7 +209,7 @@
                 document.getElementById("stat_2").innerHTML = myStat.Stat2;
                 document.getElementById("value_2").innerHTML = myStat.Value2;
                 document.getElementById("stat_3").innerHTML = myStat.Stat3;
-                document.getElementById("value_3").innerHTML = myStat.Vlue3;
+                document.getElementById("value_3").innerHTML = myStat.Value3;
                 document.getElementById("stat_4").innerHTML = myStat.Stat4;
                 document.getElementById("value_4").innerHTML = myStat.Value4;
 
@@ -232,20 +232,6 @@
                     .map((player) => {
                         return `
             <table class="stats">
-                <thead>
-                    <tr>
-                    <th>Player</th>
-                    <th>Position</th>
-                    <th>Stat 1</th>
-                    <th>Value 1</th>
-                    <th>Stat 2</th>
-                    <th>Value 2</th>
-                    <th>Stat 3</th>
-                    <th>Value 3</th>
-                    <th>Stat 4</th>
-                    <th>Value 4</th>
-                    </tr>
-                </thead>
                 <tbody>
                     <tr>
                         <td>${player.Name}</td>
@@ -255,7 +241,7 @@
                         <td>${player.Stat2}</td>
                         <td>${player.Value2}</td>
                         <td>${player.Stat3}</td>
-                        <td>${player.Vlue3}</td>
+                        <td>${player.Value3}</td>
                         <td>${player.Stat4}</td>
                         <td>${player.Value4}</td>
 
@@ -270,7 +256,7 @@
                 playerList.innerHTML = htmlString;
             };
 
-            load();
+            
 
         </script>
 
